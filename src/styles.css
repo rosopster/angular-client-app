@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.btn-disabled {
+    background-color: #e9ecef !important; /* Gris claro */
+    border-color: #dee2e6 !important; /* Borde gris */
+    color: #6c757d !important; /* Texto gris oscuro */
+    cursor: not-allowed !important; /* Cursor deshabilitado */
+    pointer-events: none; /* Desactiva cualquier interacción */
+  }
+  
+  button:disabled {
+    background-color: #e9ecef !important; /* Gris claro */
+    border-color: #dee2e6 !important; /* Borde gris */
+    color: #6c757d !important; /* Texto gris oscuro */
+    cursor: not-allowed !important; /* Cursor deshabilitado */
+  }

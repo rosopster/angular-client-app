@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+          <h2 class="mb-0">Consulta de Cliente</h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form" (ngSubmit)="buscarRest()">
+            <div class="mb-3">
+              <p class="text-muted mb-2">Todos los campos son obligatorios</p>
+              <label for="tipoDocumento" class="form-label">Tipo de Documento</label>
+              <select formControlName="tipoDocumento" class="form-select" id="tipoDocumento">
+                <option value="" disabled selected>Seleccione...</option>
+                <option value="C">Cédula de Ciudadanía</option>
+                <option value="P">Pasaporte</option>
+              </select>
+              <div
+                *ngIf="form.controls['tipoDocumento'].invalid && form.controls['tipoDocumento'].touched"
+                class="text-danger mt-1"
+              >
+                Este campo es obligatorio.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="numeroDocumento" class="form-label">Número de Documento</label>
+              <input
+                type="text"
+                formControlName="numeroDocumento"
+                class="form-control"
+                id="numeroDocumento"
+                placeholder="Ej: 123.456.789"
+                (input)="formatNumeroDocumento($event)"
+              />
+              <div
+                *ngIf="form.controls['numeroDocumento'].invalid && form.controls['numeroDocumento'].touched"
+                class="text-danger mt-1"
+              >
+                Ingrese un número válido (8-11 caracteres).
+              </div>
+            </div>
+            <div class="d-grid">
+              <button
+                type="submit"
+                class="btn btn-primary rounded-pill"
+                [disabled]="form.invalid"
+                [ngClass]="{ 'btn-disabled': form.invalid }"
+              >
+              Buscar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

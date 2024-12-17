@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+          <h2 class="mb-0">Resumen del Cliente</h2>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-12">
+              <p class="mb-1">
+                <strong>Primer Apellido:</strong>
+                <span class="text-muted">{{ cliente.primerApellido }}</span>
+              </p>
+              <p class="mb-1">
+                <strong>Primer Nombre:</strong>
+                <span class="text-muted">{{ cliente.primerNombre }}</span>
+              </p>
+            </div>
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-secondary rounded-pill" (click)="volver()">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
